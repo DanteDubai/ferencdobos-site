@@ -4,240 +4,242 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ferenc Dobos — Entertainment Technology Leadership</title>
-<meta name="description" content="Ferenc Dobos leads entertainment technology and immersive experience systems for the world's most ambitious destinations — 17 years across show systems, integrated AV & lighting, and multimillion-dollar program delivery. Riyadh, Saudi Arabia." />
+<meta name="description" content="Ferenc Dobos directs the entertainment technology and immersive experience systems behind the world's most ambitious destinations — 17 years across show systems, integrated AV & lighting, and giga-scale program delivery. Riyadh, Saudi Arabia." />
 <meta property="og:title" content="Ferenc Dobos — Entertainment Technology Leadership" />
 <meta property="og:description" content="Directing immersive experience systems at giga-scale — show control, integrated AV & lighting, and program delivery for world-class entertainment destinations." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.ferencdobos.com/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#080b10; --bg2:#0d1219; --surface:#111823; --surface2:#151d29;
-    --line:#1e2836; --line2:#26313f;
-    --text:#e8edf4; --muted:#93a1b3; --muted2:#6b7889;
-    --blue:#4c9dff; --blue-dim:#2f6dc0; --amber:#f5b13d; --amber-dim:#c8862a;
-    --maxw:1160px;
-    --ease:cubic-bezier(.2,.7,.2,1);
+    --bg:#060709; --bg2:#0a0d12; --panel:#0e1219; --panel2:#121824;
+    --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+    --ink:#f3f5f9; --muted:#8b95a7; --muted2:#5d6675;
+    --blue:#5aa0ff; --amber:#ffb24d;
+    --maxw:1200px; --ease:cubic-bezier(.19,1,.22,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--bg); color:var(--text);
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    line-height:1.6; -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,.display{font-family:'Sora',sans-serif;line-height:1.1;letter-spacing:-.02em}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.disp{font-family:'Sora',sans-serif;line-height:1.04;letter-spacing:-.03em;font-weight:800}
+  .serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:0}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  .accent-blue{color:var(--blue)} .accent-amber{color:var(--amber)}
-  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:18px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--amber)}
+  .grad{background:linear-gradient(104deg,var(--blue) 10%,#a9c6ff 40%,var(--amber) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-  /* ── Nav ── */
-  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
-  header.scrolled{background:rgba(8,11,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .brand{display:flex;align-items:center;gap:12px;font-family:'Sora';font-weight:700;font-size:16px;letter-spacing:-.01em}
-  .mono{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-size:14px;font-weight:800;
-    background:linear-gradient(135deg,var(--blue),var(--amber));color:#07090d}
-  .navlinks{display:flex;gap:30px;align-items:center}
-  .navlinks a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
-  .navlinks a:hover{color:var(--text)}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:11px 20px;border-radius:9px;transition:all .2s var(--ease);cursor:pointer;border:1px solid transparent;white-space:nowrap}
-  .btn-primary{background:var(--blue);color:#06090e}
-  .btn-primary:hover{background:#63acff;transform:translateY(-1px);box-shadow:0 8px 24px -8px var(--blue)}
-  .btn-ghost{border-color:var(--line2);color:var(--text)}
-  .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
-  .nav-toggle{display:none;background:none;border:0;color:var(--text);cursor:pointer}
+  /* fixed overlays */
+  #grain{position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  #spot{position:fixed;width:520px;height:520px;border-radius:50%;z-index:2;pointer-events:none;transform:translate(-50%,-50%);
+    background:radial-gradient(circle,rgba(90,160,255,.10),transparent 62%);transition:opacity .5s;opacity:0;will-change:left,top}
 
-  /* ── Hero ── */
-  .hero{position:relative;padding:170px 0 110px;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-  .glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
-  .glow.b{width:620px;height:620px;background:radial-gradient(circle,rgba(76,157,255,.34),transparent 68%);top:-180px;right:-120px}
-  .glow.a{width:520px;height:520px;background:radial-gradient(circle,rgba(245,177,61,.20),transparent 68%);bottom:-220px;left:-140px}
-  .grid-lines{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;opacity:.28;mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000 30%,transparent 75%)}
-  .hero-inner{position:relative;z-index:1;max-width:920px}
-  .status{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--muted);border:1px solid var(--line2);background:var(--surface);padding:7px 15px;border-radius:100px;margin-bottom:30px}
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(245,177,61,.18)}
-  .hero h1{font-size:clamp(40px,6.2vw,74px);font-weight:800;margin-bottom:26px}
-  .hero h1 .g{background:linear-gradient(100deg,var(--blue),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero .lede{font-size:clamp(17px,2.1vw,21px);color:var(--muted);max-width:640px;margin-bottom:38px}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-  .hero-meta{display:flex;gap:34px;flex-wrap:wrap;margin-top:58px;padding-top:34px;border-top:1px solid var(--line)}
-  .stat .n{font-family:'Sora';font-size:30px;font-weight:700;letter-spacing:-.02em}
-  .stat .n .u{color:var(--blue)}
-  .stat .l{font-size:13px;color:var(--muted2);margin-top:2px}
+  /* nav */
+  header{position:fixed;top:0;left:0;right:0;z-index:40;transition:.4s var(--ease);border-bottom:1px solid transparent}
+  header.scr{background:rgba(6,7,9,.72);backdrop-filter:blur(16px) saturate(1.2);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:13px;font-family:'Sora';font-weight:700;font-size:15px;letter-spacing:-.01em}
+  .mono{position:relative;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:14px;font-weight:800;color:#05070b;
+    background:linear-gradient(140deg,var(--blue),var(--amber));box-shadow:0 6px 22px -8px rgba(90,160,255,.6)}
+  .navlinks{display:flex;gap:34px;align-items:center}
+  .navlinks a{position:relative;font-size:13.5px;color:var(--muted);font-weight:500;letter-spacing:.01em;transition:color .25s;padding:4px 0}
+  .navlinks a:not(.btn):after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--blue);transition:width .3s var(--ease)}
+  .navlinks a:not(.btn):hover{color:var(--ink)} .navlinks a:not(.btn):hover:after{width:100%}
+  .btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:13.5px;padding:12px 22px;border-radius:100px;transition:.3s var(--ease);cursor:pointer;border:1px solid transparent;white-space:nowrap}
+  .btn-p{background:var(--ink);color:#06080c}
+  .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(255,255,255,.4)}
+  .btn-g{border-color:var(--line2);color:var(--ink);background:rgba(255,255,255,.02)}
+  .btn-g:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+  .navtoggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer}
 
-  /* ── Section shell ── */
-  section{position:relative}
-  .sec{padding:96px 0}
-  .sec-head{max-width:680px;margin-bottom:56px}
-  .sec-head h2{font-size:clamp(28px,3.6vw,40px);font-weight:700;margin-bottom:16px}
-  .sec-head p{color:var(--muted);font-size:17px}
-  .alt{background:linear-gradient(180deg,var(--bg),var(--bg2) 50%,var(--bg))}
+  /* hero */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:120px 0 60px}
+  #stage{position:absolute;inset:0;z-index:0;width:100%;height:100%}
+  .hgrid{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(700px 500px at var(--mx,50%) var(--my,42%),#000 0%,transparent 72%);
+    mask-image:radial-gradient(700px 500px at var(--mx,50%) var(--my,42%),#000 0%,transparent 72%)}
+  .vign{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(120% 90% at 50% 0%,transparent 40%,var(--bg) 92%)}
+  .hero-in{position:relative;z-index:2;width:100%}
+  .status{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);border:1px solid var(--line2);background:rgba(255,255,255,.03);padding:8px 16px;border-radius:100px;margin-bottom:34px;backdrop-filter:blur(6px)}
+  .live{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(255,178,77,.5);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,178,77,.5)}70%{box-shadow:0 0 0 9px rgba(255,178,77,0)}100%{box-shadow:0 0 0 0 rgba(255,178,77,0)}}
+  .hero h1{font-size:clamp(44px,7.4vw,104px);margin-bottom:30px;letter-spacing:-.045em}
+  .hero h1 .serif{font-size:1.02em;letter-spacing:-.01em}
+  .hero .sub{font-size:clamp(17px,1.9vw,21px);color:var(--muted);max-width:600px;margin-bottom:42px;line-height:1.55}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .scrollcue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted2);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+  .scrollcue .ln{width:1px;height:38px;background:linear-gradient(var(--muted2),transparent);animation:drop 2s var(--ease) infinite}
+  @keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-  /* ── About ── */
-  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:start}
-  .about-body p{color:#c3ccd8;font-size:17px;margin-bottom:20px}
-  .about-body p.lead{font-size:20px;color:var(--text);font-weight:500}
-  .about-body strong{color:var(--text);font-weight:600}
-  .card-quote{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px;position:relative}
-  .card-quote:before{content:"“";position:absolute;top:2px;left:20px;font-family:'Sora';font-size:70px;color:var(--blue);opacity:.35}
-  .card-quote p{font-family:'Sora';font-size:19px;line-height:1.4;font-weight:500;color:var(--text);margin:22px 0 16px}
-  .card-quote .by{font-size:14px;color:var(--muted)}
-  .langs{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-  .chip{font-size:13px;color:var(--muted);border:1px solid var(--line2);border-radius:8px;padding:6px 12px;background:var(--surface2)}
+  /* marquee */
+  .marq{position:relative;z-index:2;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.015);overflow:hidden;padding:20px 0}
+  .marq-track{display:flex;gap:56px;width:max-content;animation:scroll 34s linear infinite}
+  .marq:hover .marq-track{animation-play-state:paused}
+  .marq-item{display:flex;align-items:center;gap:56px;font-family:'Sora';font-weight:600;font-size:15px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
+  .marq-item b{color:var(--ink);font-weight:600}
+  .marq-item .sep{color:var(--blue);opacity:.7}
+  @keyframes scroll{to{transform:translateX(-50%)}}
 
-  /* ── Expertise ── */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;transition:border-color .25s,transform .25s var(--ease);position:relative;overflow:hidden}
-  .card:hover{border-color:var(--line2);transform:translateY(-3px)}
-  .card:hover .ic{color:var(--amber)}
-  .ic{width:46px;height:46px;border-radius:11px;display:grid;place-items:center;background:var(--surface2);border:1px solid var(--line2);color:var(--blue);margin-bottom:20px;transition:color .25s}
-  .ic svg{width:23px;height:23px}
-  .card h3{font-size:19px;font-weight:600;margin-bottom:10px}
-  .card p{color:var(--muted);font-size:15px}
+  /* section */
+  .sec{position:relative;z-index:2;padding:130px 0}
+  .snum{font-family:'Sora';font-size:13px;font-weight:600;color:var(--blue);letter-spacing:.1em;margin-bottom:18px}
+  .sec-head{max-width:760px;margin-bottom:70px}
+  .sec-head h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:20px;letter-spacing:-.035em}
+  .sec-head p{color:var(--muted);font-size:18px;max-width:600px}
 
-  /* ── Experience timeline ── */
-  .tl{position:relative;max-width:820px}
-  .tl:before{content:"";position:absolute;left:14px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--blue),var(--amber-dim),transparent)}
-  .tl-item{position:relative;padding:0 0 40px 52px}
-  .tl-item:last-child{padding-bottom:0}
-  .tl-item:before{content:"";position:absolute;left:8px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--blue)}
-  .tl-item.cur:before{background:var(--amber);border-color:var(--amber);box-shadow:0 0 0 5px rgba(245,177,61,.16)}
-  .tl-role{font-family:'Sora';font-size:19px;font-weight:600}
-  .tl-org{color:var(--blue);font-weight:600;font-size:15px;margin-top:3px}
+  /* about */
+  .about{display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:center}
+  .about .lead{font-size:clamp(24px,2.8vw,34px);font-family:'Sora';font-weight:300;line-height:1.28;letter-spacing:-.02em;color:var(--ink);margin-bottom:30px}
+  .about .lead .serif{color:var(--amber);font-weight:400}
+  .about p{color:#aeb7c6;font-size:16.5px;margin-bottom:18px}
+  .about strong{color:var(--ink);font-weight:600}
+  .aside{border-left:1px solid var(--line);padding-left:34px}
+  .aside .big{font-family:'Sora';font-size:clamp(52px,6vw,76px);font-weight:800;letter-spacing:-.04em;line-height:1;background:linear-gradient(160deg,var(--ink),var(--muted2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .aside .big + .cap{color:var(--muted);font-size:14px;margin:8px 0 34px;max-width:220px}
+  .langs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chip{font-size:12.5px;color:var(--muted);border:1px solid var(--line2);border-radius:100px;padding:7px 14px;background:rgba(255,255,255,.02);transition:.25s}
+  .chip:hover{border-color:var(--blue);color:var(--ink)}
+
+  /* expertise list */
+  .xlist{border-top:1px solid var(--line)}
+  .xrow{display:grid;grid-template-columns:64px 1fr 1.1fr;gap:30px;align-items:center;padding:32px 12px;border-bottom:1px solid var(--line);transition:.4s var(--ease);position:relative}
+  .xrow:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(90,160,255,.06),transparent 60%);opacity:0;transition:opacity .4s}
+  .xrow:hover{padding-left:22px}.xrow:hover:before{opacity:1}
+  .xrow:hover .xh{color:var(--blue)}
+  .xn{font-family:'Sora';font-size:14px;color:var(--muted2);font-weight:600}
+  .xh{font-family:'Sora';font-size:clamp(20px,2.3vw,26px);font-weight:700;letter-spacing:-.02em;transition:color .3s}
+  .xp{color:var(--muted);font-size:15.5px}
+
+  /* experience */
+  .tl{max-width:900px}
+  .tl-item{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:36px 0;border-top:1px solid var(--line);transition:.35s var(--ease)}
+  .tl-item:hover{background:linear-gradient(90deg,rgba(255,255,255,.02),transparent);border-radius:14px;padding-left:20px;padding-right:20px}
+  .tl-when{font-family:'Sora';font-size:13px;color:var(--muted2);letter-spacing:.04em;padding-top:4px}
+  .tl-item.cur .tl-when{color:var(--amber)}
+  .tl-role{font-family:'Sora';font-size:clamp(19px,2.1vw,24px);font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
+  .tl-org{color:var(--blue);font-weight:600;font-size:14.5px;margin-bottom:12px}
   .tl-item.cur .tl-org{color:var(--amber)}
-  .tl-when{font-size:13px;color:var(--muted2);margin:4px 0 10px;letter-spacing:.02em}
-  .tl-desc{color:var(--muted);font-size:15px}
+  .tl-desc{color:var(--muted);font-size:15.5px;max-width:560px}
 
-  /* ── Work ── */
-  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .work{background:linear-gradient(160deg,var(--surface),var(--bg2));border:1px solid var(--line);border-radius:18px;padding:30px;transition:border-color .25s,transform .25s var(--ease)}
-  .work:hover{border-color:var(--blue-dim);transform:translateY(-3px)}
-  .work .tag{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
-  .work h3{font-size:21px;font-weight:600;margin-bottom:10px}
-  .work p{color:var(--muted);font-size:15px}
-  .work .prog{margin-top:44px}
-  .banner{grid-column:1/-1;background:linear-gradient(135deg,rgba(76,157,255,.10),rgba(245,177,61,.07));border:1px solid var(--line2);border-radius:18px;padding:30px 34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  .banner h3{font-size:20px;font-weight:600}
-  .banner p{color:var(--muted);font-size:15px;margin-top:6px}
+  /* work */
+  .wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .wcard{position:relative;border:1px solid var(--line);border-radius:22px;padding:36px;overflow:hidden;background:linear-gradient(165deg,var(--panel),var(--bg2));transition:.45s var(--ease);min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+  .wcard:hover{transform:translateY(-6px);border-color:var(--line2)}
+  .wcard .glowc{position:absolute;width:300px;height:300px;border-radius:50%;filter:blur(70px);top:-120px;right:-80px;opacity:0;transition:opacity .5s}
+  .wcard:hover .glowc{opacity:.5}
+  .wcard.b .glowc{background:radial-gradient(circle,rgba(90,160,255,.5),transparent 70%)}
+  .wcard.a .glowc{background:radial-gradient(circle,rgba(255,178,77,.4),transparent 70%)}
+  .wtag{position:relative;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:auto}
+  .wcard h3{position:relative;font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-.025em;margin:22px 0 12px}
+  .wcard p{position:relative;color:var(--muted);font-size:15px}
+  .wbanner{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+    border:1px solid var(--line2);border-radius:22px;padding:34px 40px;background:linear-gradient(120deg,rgba(90,160,255,.08),rgba(255,178,77,.05))}
+  .wbanner h3{font-size:22px;font-weight:700;letter-spacing:-.02em}
+  .wbanner p{color:var(--muted);margin-top:6px;font-size:15px}
 
-  /* ── Insights ── */
-  .insights{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-  .insights .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-  .themebox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
-  .themebox .t-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
-  .themebox .t-item:last-child{border-bottom:0;padding-bottom:0}
-  .themebox .t-item:first-child{padding-top:0}
-  .t-item .k{color:var(--blue);font-weight:700;font-family:'Sora'}
-  .t-item .v h4{font-size:16px;font-weight:600;margin-bottom:2px}
-  .t-item .v p{font-size:14px;color:var(--muted)}
+  /* insights */
+  .ins{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .ins h2{font-size:clamp(30px,4vw,46px);margin-bottom:20px;letter-spacing:-.03em}
+  .ins .pillrow{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 32px}
+  .themebox{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel)}
+  .ti{display:flex;gap:20px;align-items:flex-start;padding:24px 28px;border-bottom:1px solid var(--line);transition:.3s}
+  .ti:last-child{border-bottom:0} .ti:hover{background:rgba(255,255,255,.02)}
+  .ti .k{font-family:'Sora';font-weight:700;color:var(--blue);font-size:15px;padding-top:2px}
+  .ti h4{font-size:16.5px;font-weight:600;margin-bottom:3px}
+  .ti p{font-size:14px;color:var(--muted)}
 
-  /* ── Contact ── */
-  .contact{background:linear-gradient(180deg,var(--bg),#0a0f16);text-align:center}
-  .contact h2{font-size:clamp(30px,4.4vw,50px);font-weight:800;margin-bottom:18px}
-  .contact h2 .g{background:linear-gradient(100deg,var(--blue),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .contact p{color:var(--muted);font-size:18px;max-width:560px;margin:0 auto 34px}
-  .contact-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  /* contact */
+  .contact{position:relative;z-index:2;text-align:center;padding:150px 0 120px;overflow:hidden}
+  .contact .cglow{position:absolute;width:900px;height:500px;left:50%;top:20%;transform:translateX(-50%);border-radius:50%;filter:blur(120px);
+    background:radial-gradient(circle,rgba(90,160,255,.16),transparent 65%);pointer-events:none}
+  .contact h2{position:relative;font-size:clamp(38px,6.4vw,84px);letter-spacing:-.045em;margin-bottom:24px}
+  .contact p{position:relative;color:var(--muted);font-size:19px;max-width:600px;margin:0 auto 40px}
+  .contact-cta{position:relative;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
-  footer{border-top:1px solid var(--line);padding:34px 0;margin-top:20px}
-  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted2);font-size:14px}
-  .foot a{color:var(--muted)}.foot a:hover{color:var(--text)}
+  footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:40px 0}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;color:var(--muted2);font-size:13.5px}
+  .foot a{color:var(--muted)} .foot a:hover{color:var(--ink)}
 
-  /* reveal */
-  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .rv{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
   .rv.in{opacity:1;transform:none}
 
-  @media(max-width:900px){
-    .about-grid,.insights{grid-template-columns:1fr;gap:34px}
-    .cards{grid-template-columns:1fr 1fr}
-    .work-grid{grid-template-columns:1fr}
-    .navlinks{display:none}
-    .nav-toggle{display:block}
-    .navlinks.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--line);padding:18px 28px;gap:18px}
-    .navlinks.open a{font-size:16px}
-    .hero{padding:140px 0 80px}
-    .hero-meta{gap:26px}
+  @media(max-width:960px){
+    .about,.ins{grid-template-columns:1fr;gap:40px}
+    .aside{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:34px}
+    .xrow{grid-template-columns:44px 1fr;gap:16px}.xrow .xp{grid-column:2}
+    .wgrid{grid-template-columns:1fr}
+    .tl-item{grid-template-columns:1fr;gap:8px}
+    .navlinks{display:none}.navtoggle{display:block}
+    .navlinks.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--line);padding:20px 32px;gap:20px}
   }
-  @media(max-width:560px){
-    .cards{grid-template-columns:1fr}
-    .sec{padding:70px 0}
-    .stat .n{font-size:25px}
-  }
+  @media(max-width:560px){.sec{padding:90px 0}.hero{padding:110px 0 40px}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
 <body>
+<div id="grain"></div>
+<div id="spot"></div>
 
 <header id="hdr">
-  <div class="wrap">
-    <nav>
-      <a class="brand" href="#top"><span class="mono">FD</span> Ferenc Dobos</a>
-      <div class="navlinks" id="nav">
-        <a href="#about">About</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#experience">Experience</a>
-        <a href="#work">Selected Work</a>
-        <a href="#insights">Insights</a>
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/ferencdobos" target="_blank" rel="noopener">Connect on LinkedIn</a>
-      </div>
-      <button class="nav-toggle" id="toggle" aria-label="Menu">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
-      </button>
-    </nav>
-  </div>
+  <div class="wrap"><nav>
+    <a class="brand" href="#top"><span class="mono">FD</span> Ferenc Dobos</a>
+    <div class="navlinks" id="nav">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#insights">Insights</a>
+      <a class="btn btn-p" href="https://www.linkedin.com/in/ferencdobos" target="_blank" rel="noopener">Connect</a>
+    </div>
+    <button class="navtoggle" id="toggle" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button>
+  </nav></div>
 </header>
 
 <main id="top">
-
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg">
-      <div class="grid-lines"></div>
-      <div class="glow b"></div>
-      <div class="glow a"></div>
-    </div>
-    <div class="wrap">
-      <div class="hero-inner">
-        <div class="status"><span class="dot"></span> Riyadh, Saudi Arabia · JASARA Program Management</div>
-        <h1>Entertainment technology leadership for the world's most <span class="g">ambitious destinations</span>.</h1>
-        <p class="lede">Seventeen years directing the show systems, integrated AV &amp; lighting, and program delivery behind immersive experiences that have to work perfectly — in front of thousands, every time.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#contact">Start a conversation</a>
-          <a class="btn btn-ghost" href="#work">View selected work →</a>
-        </div>
-        <div class="hero-meta">
-          <div class="stat"><div class="n">17<span class="u">+</span></div><div class="l">Years in entertainment technology</div></div>
-          <div class="stat"><div class="n">Giga<span class="u">·</span>scale</div><div class="l">Qiddiya-class destination delivery</div></div>
-          <div class="stat"><div class="n">11K<span class="u">+</span></div><div class="l">Industry followers on LinkedIn</div></div>
-        </div>
+    <canvas id="stage"></canvas>
+    <div class="hgrid" id="hgrid"></div>
+    <div class="vign"></div>
+    <div class="wrap hero-in">
+      <div class="status"><span class="live"></span> Riyadh · JASARA Program Management · Available for landmark programs</div>
+      <h1>The technology behind<br>experiences the world <span class="serif grad">remembers.</span></h1>
+      <p class="sub">Seventeen years directing the show systems, integrated AV &amp; lighting, and program delivery that turn the most ambitious destinations on earth into moments people never forget.</p>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="#contact">Start a conversation</a>
+        <a class="btn btn-g" href="#work">See the work →</a>
       </div>
     </div>
+    <div class="scrollcue"><span>Scroll</span><span class="ln"></span></div>
   </section>
+
+  <div class="marq">
+    <div class="marq-track" id="marq">
+      <div class="marq-item"><b>JASARA PMC</b><span class="sep">✦</span><b>Qiddiya City</b><span class="sep">✦</span>Show Systems<span class="sep">✦</span>Integrated AVL<span class="sep">✦</span>Projection<span class="sep">✦</span>Show Control<span class="sep">✦</span><b>Immersive Attractions</b><span class="sep">✦</span>Program Delivery<span class="sep">✦</span></div>
+      <div class="marq-item" aria-hidden="true"><b>JASARA PMC</b><span class="sep">✦</span><b>Qiddiya City</b><span class="sep">✦</span>Show Systems<span class="sep">✦</span>Integrated AVL<span class="sep">✦</span>Projection<span class="sep">✦</span>Show Control<span class="sep">✦</span><b>Immersive Attractions</b><span class="sep">✦</span>Program Delivery<span class="sep">✦</span></div>
+    </div>
+  </div>
 
   <!-- ABOUT -->
   <section class="sec" id="about">
     <div class="wrap">
-      <div class="about-grid">
-        <div class="about-body rv">
-          <div class="eyebrow">About</div>
-          <p class="lead">I lead the technology that turns ambitious concepts into experiences people remember.</p>
-          <p>For seventeen years I've worked in the rooms where entertainment technology either works perfectly — or fails in front of a live audience. That pressure shaped how I lead: rigorous on the engineering, calm on delivery, and relentless about the guest experience the systems ultimately serve.</p>
-          <p>Today, based in Riyadh with <strong>JASARA Program Management Company</strong>, I direct integrated show systems, AV and lighting across some of the most ambitious entertainment destinations being built anywhere in the world. My focus sits where <strong>technical design, program management and leadership</strong> meet — aligning designers, contractors and operators around a single, deliverable vision.</p>
-          <p>The path here ran through the UAE, Hungary, and the demanding, no-excuses world of cruise-ship show operations. It's a career built on one principle: the technology should disappear, and the experience should be all anyone remembers.</p>
-          <div class="langs">
-            <span class="chip">English — Professional</span>
-            <span class="chip">Hungarian — Native</span>
-            <span class="chip">German — Working</span>
-          </div>
-        </div>
+      <div class="about">
         <div class="rv">
-          <div class="card-quote">
-            <p>Entertainment technology either works perfectly — or it fails in front of thousands of people. Seventeen years in those rooms teaches you to lead for the moment that can't be redone.</p>
-            <div class="by">— Ferenc Dobos</div>
+          <div class="snum">01 — About</div>
+          <p class="lead">I lead the technology that turns ambitious concepts into experiences people <span class="serif">remember</span> — where the engineering has to be flawless and the moment can't be redone.</p>
+          <p>For seventeen years I've worked in the rooms where entertainment technology either performs perfectly or fails in front of a live audience. That pressure shaped how I lead: rigorous on the engineering, calm on delivery, and relentless about the experience the systems exist to serve.</p>
+          <p>Today, in Riyadh with <strong>JASARA Program Management Company</strong>, I direct integrated show systems, AV and lighting across some of the most ambitious entertainment destinations being built anywhere — operating where <strong>technical design, program management and leadership</strong> converge, aligning designers, contractors and operators around one deliverable vision.</p>
+          <p>The path here ran through the UAE, Hungary, and the no-second-take world of cruise-ship show operations. One principle throughout: the technology should disappear, and the experience should be all anyone remembers.</p>
+        </div>
+        <div class="aside rv">
+          <div class="big">17</div><div class="cap">years in entertainment technology, on three continents and at sea.</div>
+          <div class="big">Giga</div><div class="cap">scale — delivering Qiddiya-class destination programs.</div>
+          <div class="langs">
+            <span class="chip">English</span><span class="chip">Hungarian — native</span><span class="chip">German</span>
+            <span class="chip">Lean Six Sigma</span><span class="chip">Q-SYS</span><span class="chip">Dante L3</span>
           </div>
         </div>
       </div>
@@ -245,44 +247,20 @@
   </section>
 
   <!-- EXPERTISE -->
-  <section class="sec alt" id="expertise">
+  <section class="sec" id="expertise">
     <div class="wrap">
       <div class="sec-head rv">
-        <div class="eyebrow">Expertise</div>
+        <div class="snum">02 — Expertise</div>
         <h2>Where I create value</h2>
-        <p>Five disciplines that turn complex entertainment technology into destinations that open on time and perform on day one.</p>
+        <p>Six disciplines that turn complex entertainment technology into destinations that open on time and perform on day one.</p>
       </div>
-      <div class="cards">
-        <div class="card rv">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1m0-12.8l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
-          <h3>Entertainment Show Systems</h3>
-          <p>Designing and delivering complex, synchronised show systems — control, timing and integration that produce seamless, repeatable immersive moments.</p>
-        </div>
-        <div class="card rv">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 9l3 2-3 2M13 12h4"/></svg></div>
-          <h3>Integrated AV &amp; Lighting</h3>
-          <p>Developing audio, video and lighting as one integrated system — engineered to the architecture and the attraction, not bolted on afterward.</p>
-        </div>
-        <div class="card rv">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/><path d="M18 5l1.5 1.5L22 4"/></svg></div>
-          <h3>Leadership</h3>
-          <p>Building and mentoring cross-functional teams, and creating the alignment between disciplines that large-scale delivery quietly depends on.</p>
-        </div>
-        <div class="card rv">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 11l2 2 4-4"/><rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M8 4V2m8 2V2"/></svg></div>
-          <h3>Project &amp; Program Management</h3>
-          <p>Steering multimillion-dollar entertainment and hospitality programs from concept to opening — scope, schedule, budget and stakeholders held together.</p>
-        </div>
-        <div class="card rv">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20l5-1 9-9-4-4-9 9-1 5z"/><path d="M13 6l4 4"/></svg></div>
-          <h3>Design Management</h3>
-          <p>Leading the design process end to end — from concept development through technical coordination and into build-ready documentation.</p>
-        </div>
-        <div class="card rv">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/><path d="M12 3v3"/></svg></div>
-          <h3>Attraction &amp; Venue Delivery</h3>
-          <p>Translating creative intent into the systems that make theme parks, water parks and performance venues open — and stay open — flawlessly.</p>
-        </div>
+      <div class="xlist">
+        <div class="xrow rv"><div class="xn">01</div><div class="xh">Entertainment Show Systems</div><div class="xp">Complex, synchronised show systems — control, timing and integration that produce seamless, repeatable immersive moments.</div></div>
+        <div class="xrow rv"><div class="xn">02</div><div class="xh">Integrated AV &amp; Lighting</div><div class="xp">Audio, video and lighting engineered as one system, to the architecture and the attraction — never bolted on afterward.</div></div>
+        <div class="xrow rv"><div class="xn">03</div><div class="xh">Leadership</div><div class="xp">Building and mentoring cross-functional teams, and creating the alignment between disciplines that large-scale delivery quietly depends on.</div></div>
+        <div class="xrow rv"><div class="xn">04</div><div class="xh">Project &amp; Program Management</div><div class="xp">Steering multimillion-dollar entertainment and hospitality programs from concept to opening — scope, schedule, budget and stakeholders.</div></div>
+        <div class="xrow rv"><div class="xn">05</div><div class="xh">Design Management</div><div class="xp">Leading the design process end to end — concept development through technical coordination into build-ready documentation.</div></div>
+        <div class="xrow rv"><div class="xn">06</div><div class="xh">Attraction &amp; Venue Delivery</div><div class="xp">Translating creative intent into the systems that make theme parks, water parks and performance venues open — and stay open — flawlessly.</div></div>
       </div>
     </div>
   </section>
@@ -291,144 +269,120 @@
   <section class="sec" id="experience">
     <div class="wrap">
       <div class="sec-head rv">
-        <div class="eyebrow">Experience</div>
-        <h2>A career built across the industry's hardest rooms</h2>
+        <div class="snum">03 — Experience</div>
+        <h2>Built across the industry's hardest rooms</h2>
         <p>From live show operations at sea to giga-scale destination programs in the Kingdom.</p>
       </div>
       <div class="tl">
-        <div class="tl-item cur rv">
-          <div class="tl-role">Entertainment Technology &amp; Program Delivery</div>
-          <div class="tl-org">JASARA Program Management Company — Riyadh, Saudi Arabia</div>
-          <div class="tl-when">Current</div>
-          <div class="tl-desc">Directing integrated show systems, AV and lighting across landmark entertainment destinations in Saudi Arabia — aligning design, engineering and delivery at giga-project scale.</div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-role">Senior AV &amp; Lighting / Show Systems Leadership</div>
-          <div class="tl-org">United Arab Emirates — Dubai &amp; the Emirates</div>
-          <div class="tl-when">Regional entertainment &amp; hospitality projects</div>
-          <div class="tl-desc">Technical design and project leadership on immersive attractions and hospitality venues across the UAE's most demanding entertainment developments.</div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-role">Show Systems &amp; Technical Roles</div>
-          <div class="tl-org">Hungary — European entertainment industry</div>
-          <div class="tl-when">Early-to-mid career foundation</div>
-          <div class="tl-desc">Built the engineering foundation across AV, lighting and show technology in the European market.</div>
-        </div>
-        <div class="tl-item rv">
-          <div class="tl-role">Live Show Operations at Sea</div>
-          <div class="tl-org">MV Hamburg &amp; MV Deutschland</div>
-          <div class="tl-when">Cruise entertainment technology</div>
-          <div class="tl-desc">Ran nightly live show technology where there is no second take and no calling for backup — the discipline that still defines how I lead delivery today.</div>
-        </div>
+        <div class="tl-item cur rv"><div class="tl-when">Current</div><div><div class="tl-role">Entertainment Technology &amp; Program Delivery</div><div class="tl-org">JASARA Program Management Company · Riyadh</div><div class="tl-desc">Directing integrated show systems, AV and lighting across landmark entertainment destinations in Saudi Arabia — aligning design, engineering and delivery at giga-project scale.</div></div></div>
+        <div class="tl-item rv"><div class="tl-when">Prior · UAE</div><div><div class="tl-role">Senior AV &amp; Lighting / Show Systems</div><div class="tl-org">Dubai &amp; the Emirates</div><div class="tl-desc">Technical design and project leadership on immersive attractions and hospitality venues across the UAE's most demanding entertainment developments.</div></div></div>
+        <div class="tl-item rv"><div class="tl-when">Foundation · EU</div><div><div class="tl-role">Show Systems &amp; Technical Roles</div><div class="tl-org">Hungary · European entertainment industry</div><div class="tl-desc">Built the engineering foundation across AV, lighting and show technology in the European market.</div></div></div>
+        <div class="tl-item rv"><div class="tl-when">At sea</div><div><div class="tl-role">Live Show Operations</div><div class="tl-org">MV Hamburg &amp; MV Deutschland</div><div class="tl-desc">Ran nightly live show technology where there is no second take and no calling for backup — the discipline that still defines how I lead delivery today.</div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- SELECTED WORK -->
-  <section class="sec alt" id="work">
+  <!-- WORK -->
+  <section class="sec" id="work">
     <div class="wrap">
       <div class="sec-head rv">
-        <div class="eyebrow">Selected Work</div>
+        <div class="snum">04 — Selected Work</div>
         <h2>Contributing to Qiddiya City</h2>
-        <p>Part of the program teams delivering the entertainment technology behind Saudi Arabia's flagship destination for sport, culture and entertainment.</p>
+        <p>On the program teams delivering the entertainment technology behind Saudi Arabia's flagship destination for sport, culture and entertainment.</p>
       </div>
-      <div class="work-grid">
-        <div class="work rv">
-          <div class="tag">Theme Park</div>
-          <h3>Dragon Ball Theme Park</h3>
-          <p>Entertainment technology and show systems input for one of the world's most anticipated licensed theme parks — where creative fidelity and technical execution have to meet exactly.</p>
-        </div>
-        <div class="work rv">
-          <div class="tag">Water Park</div>
-          <h3>Aquarabia</h3>
-          <p>Immersive water-park experiences that fuse attraction engineering with AV, lighting and show control at destination scale.</p>
-        </div>
-        <div class="work rv">
-          <div class="tag">Cultural Venue</div>
-          <h3>Performing Arts Centre</h3>
-          <p>The integrated systems behind a world-class performing-arts venue — precision audio, video and lighting for live performance at the highest standard.</p>
-        </div>
-        <div class="work rv">
-          <div class="tag">Motorsport &amp; Live Venues</div>
-          <h3>Speed Park &amp; Live Attractions</h3>
-          <p>Show and spectator-experience technology for high-energy live and motorsport venues within the wider Qiddiya program.</p>
-        </div>
-        <div class="banner rv">
-          <div>
-            <h3>Under NDA, but happy to talk specifics</h3>
-            <p>Much of this work sits inside active giga-project programs. I'm glad to discuss scope, role and outcomes directly.</p>
-          </div>
-          <a class="btn btn-primary" href="#contact">Get in touch</a>
-        </div>
+      <div class="wgrid">
+        <div class="wcard b rv"><div class="glowc"></div><div class="wtag">Theme Park</div><h3>Dragon Ball Theme Park</h3><p>Entertainment technology and show systems input for one of the world's most anticipated licensed theme parks — where creative fidelity and technical execution must meet exactly.</p></div>
+        <div class="wcard a rv"><div class="glowc"></div><div class="wtag">Water Park</div><h3>Aquarabia</h3><p>Immersive water-park experiences fusing attraction engineering with AV, lighting and show control at destination scale.</p></div>
+        <div class="wcard a rv"><div class="glowc"></div><div class="wtag">Cultural Venue</div><h3>Performing Arts Centre</h3><p>The integrated systems behind a world-class performing-arts venue — precision audio, video and lighting for live performance at the highest standard.</p></div>
+        <div class="wcard b rv"><div class="glowc"></div><div class="wtag">Motorsport &amp; Live</div><h3>Speed Park &amp; Live Venues</h3><p>Show and spectator-experience technology for high-energy live and motorsport venues within the wider Qiddiya program.</p></div>
+        <div class="wbanner rv"><div><h3>Much of it sits under NDA</h3><p>Happy to discuss scope, role and outcomes directly.</p></div><a class="btn btn-p" href="#contact">Get in touch</a></div>
       </div>
     </div>
   </section>
 
   <!-- INSIGHTS -->
   <section class="sec" id="insights">
-    <div class="wrap">
-      <div class="insights">
-        <div class="rv">
-          <div class="eyebrow">Insights</div>
-          <h2 style="font-size:clamp(28px,3.6vw,40px);font-weight:700;margin-bottom:16px">Notes from inside the industry</h2>
-          <p style="color:var(--muted);font-size:17px">I write regularly for an audience of 11,000+ on the leadership, systems and delivery realities behind world-class immersive experiences — the parts that don't make the ribbon-cutting photos.</p>
-          <div class="pill-row">
-            <span class="chip">Leadership</span><span class="chip">Program Delivery</span>
-            <span class="chip">Show Technology</span><span class="chip">AI in Entertainment</span>
-            <span class="chip">Saudi Giga-Projects</span>
-          </div>
-          <div style="margin-top:30px">
-            <a class="btn btn-primary" href="https://www.linkedin.com/in/ferencdobos" target="_blank" rel="noopener">Follow on LinkedIn →</a>
-          </div>
-        </div>
-        <div class="themebox rv">
-          <div class="t-item"><div class="k">01</div><div class="v"><h4>Leadership under live-show pressure</h4><p>What running technology with no second take teaches you about leading teams.</p></div></div>
-          <div class="t-item"><div class="k">02</div><div class="v"><h4>Delivering at giga-scale</h4><p>Turning creative intent into systems that open on time and perform on day one.</p></div></div>
-          <div class="t-item"><div class="k">03</div><div class="v"><h4>Integration over add-ons</h4><p>Why AV, lighting and show control have to be designed as one system.</p></div></div>
-          <div class="t-item"><div class="k">04</div><div class="v"><h4>AI in immersive experience</h4><p>Where new technology genuinely changes the craft — and where it doesn't.</p></div></div>
-        </div>
+    <div class="wrap"><div class="ins">
+      <div class="rv">
+        <div class="snum">05 — Insights</div>
+        <h2>Notes from inside the industry</h2>
+        <p style="color:var(--muted);font-size:17px">I write for an audience of 11,000+ on the leadership, systems and delivery realities behind world-class immersive experiences — the parts that don't make the ribbon-cutting photos.</p>
+        <div class="pillrow"><span class="chip">Leadership</span><span class="chip">Program Delivery</span><span class="chip">Show Technology</span><span class="chip">AI in Entertainment</span><span class="chip">Saudi Giga-Projects</span></div>
+        <a class="btn btn-p" href="https://www.linkedin.com/in/ferencdobos" target="_blank" rel="noopener">Follow on LinkedIn →</a>
       </div>
-    </div>
+      <div class="themebox rv">
+        <div class="ti"><div class="k">01</div><div><h4>Leadership under live-show pressure</h4><p>What running technology with no second take teaches you about leading teams.</p></div></div>
+        <div class="ti"><div class="k">02</div><div><h4>Delivering at giga-scale</h4><p>Turning creative intent into systems that open on time and perform on day one.</p></div></div>
+        <div class="ti"><div class="k">03</div><div><h4>Integration over add-ons</h4><p>Why AV, lighting and show control must be designed as one system.</p></div></div>
+        <div class="ti"><div class="k">04</div><div><h4>AI in immersive experience</h4><p>Where new technology genuinely changes the craft — and where it doesn't.</p></div></div>
+      </div>
+    </div></div>
   </section>
 
   <!-- CONTACT -->
-  <section class="sec contact" id="contact">
-    <div class="wrap">
-      <div class="rv">
-        <div class="eyebrow" style="text-align:center">Contact</div>
-        <h2>Let's build something <span class="g">unforgettable</span>.</h2>
-        <p>Whether it's a destination program, an entertainment-technology challenge, or a conversation about where the industry is heading — I'd like to hear from you.</p>
-        <div class="contact-cta">
-          <a class="btn btn-primary" href="mailto:info@ferencdobos.com">info@ferencdobos.com</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/ferencdobos" target="_blank" rel="noopener">Connect on LinkedIn</a>
-        </div>
+  <section class="contact" id="contact">
+    <div class="cglow"></div>
+    <div class="wrap rv">
+      <div class="eyebrow" style="margin-bottom:22px">Contact</div>
+      <h2>Let's build something<br><span class="serif grad">unforgettable.</span></h2>
+      <p>A destination program, an entertainment-technology challenge, or a conversation about where the industry is heading — I'd like to hear from you.</p>
+      <div class="contact-cta">
+        <a class="btn btn-p" href="mailto:info@ferencdobos.com">info@ferencdobos.com</a>
+        <a class="btn btn-g" href="https://www.linkedin.com/in/ferencdobos" target="_blank" rel="noopener">Connect on LinkedIn</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <div>© <span id="yr"></span> Ferenc Dobos · Riyadh, Saudi Arabia</div>
-    <div style="display:flex;gap:22px">
-      <a href="https://www.linkedin.com/in/ferencdobos" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:info@ferencdobos.com">Email</a>
-    </div>
-  </div>
-</footer>
+<footer><div class="wrap foot">
+  <div>© <span id="yr"></span> Ferenc Dobos · Riyadh, Saudi Arabia</div>
+  <div style="display:flex;gap:24px"><a href="https://www.linkedin.com/in/ferencdobos" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:info@ferencdobos.com">Email</a></div>
+</div></footer>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
-  const hdr = document.getElementById('hdr');
-  const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 20);
-  window.addEventListener('scroll', onScroll); onScroll();
-  const nav = document.getElementById('nav'), toggle = document.getElementById('toggle');
-  toggle.addEventListener('click', () => nav.classList.toggle('open'));
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
-  const io = new IntersectionObserver((es) => {
-    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: .12 });
-  document.querySelectorAll('.rv').forEach((el,i) => { el.style.transitionDelay = (i%3*70)+'ms'; io.observe(el); });
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('scr',scrollY>24)});
+  var nav=document.getElementById('nav'),tg=document.getElementById('toggle');
+  tg.addEventListener('click',function(){nav.classList.toggle('open')});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});
+
+  // cursor spotlight + grid mask
+  var spot=document.getElementById('spot'),hgrid=document.getElementById('hgrid'),hero=document.querySelector('.hero');
+  addEventListener('mousemove',function(e){
+    spot.style.left=e.clientX+'px';spot.style.top=e.clientY+'px';spot.style.opacity='1';
+    var r=hero.getBoundingClientRect();
+    if(e.clientY<r.bottom){hgrid.style.setProperty('--mx',(e.clientX-r.left)+'px');hgrid.style.setProperty('--my',(e.clientY-r.top)+'px');}
+  });
+
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%4*80)+'ms';io.observe(el);});
+
+  // stage-light canvas — drifting soft light beams (additive)
+  var c=document.getElementById('stage'),x=c.getContext('2d'),W,H,DPR=Math.min(devicePixelRatio||1,2);
+  function size(){W=c.width=innerWidth*DPR;H=c.height=Math.max(innerHeight,600)*DPR;c.style.width=innerWidth+'px';c.style.height=Math.max(innerHeight,600)+'px';}
+  size();addEventListener('resize',size);
+  var beams=[
+    {hue:'90,160,255',x:.22,y:.15,r:.55,sp:.00013,ph:0},
+    {hue:'255,178,77',x:.82,y:.30,r:.5,sp:.00017,ph:2},
+    {hue:'120,120,255',x:.6,y:.85,r:.6,sp:.00009,ph:4},
+    {hue:'90,160,255',x:.9,y:.9,r:.42,sp:.00021,ph:1}
+  ];
+  var t=0,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function draw(){
+    x.clearRect(0,0,W,H);x.globalCompositeOperation='lighter';
+    for(var i=0;i<beams.length;i++){var b=beams[i];
+      var px=(b.x+Math.sin(t*b.sp*1000+b.ph)*.06)*W;
+      var py=(b.y+Math.cos(t*b.sp*760+b.ph)*.05)*H;
+      var rad=b.r*Math.min(W,H)*(0.9+Math.sin(t*0.0006+b.ph)*0.08);
+      var g=x.createRadialGradient(px,py,0,px,py,rad);
+      g.addColorStop(0,'rgba('+b.hue+',0.16)');g.addColorStop(.5,'rgba('+b.hue+',0.05)');g.addColorStop(1,'rgba('+b.hue+',0)');
+      x.fillStyle=g;x.fillRect(0,0,W,H);
+    }
+    x.globalCompositeOperation='source-over';
+  }
+  if(reduce){draw();}else{(function loop(ts){t=ts||0;draw();requestAnimationFrame(loop);})();}
 </script>
 </body>
 </html>
