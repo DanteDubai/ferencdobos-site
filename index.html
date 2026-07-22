@@ -14,9 +14,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#f4f1ea; --bg2:#ede8de; --ink:#191512; --ink-2:#3b352e;
-    --muted:#6f685c; --faint:#a79d8d; --line:rgba(25,21,18,.14); --line-s:rgba(25,21,18,.32);
-    --accent:#9a7b45;
+    --bg:#0a0c11; --bg2:#0f1219; --ink:#e9ecf3; --ink-2:#aeb4c2;
+    --muted:#7c8396; --faint:#4d5464; --line:rgba(233,236,243,.10); --line-s:rgba(233,236,243,.28);
+    --blue:#5c9dff; --gold:#c9a869;
     --maxw:1160px; --read:600px; --ease:cubic-bezier(.16,1,.3,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -27,10 +27,11 @@
   em{font-family:'Fraunces',serif;font-style:italic}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 44px}
-  .kicker{font-size:11px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--accent)}
+  .kicker{font-size:11px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+  .bg{background:linear-gradient(100deg,var(--blue),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 
   header{position:fixed;top:0;left:0;right:0;z-index:40;transition:.5s var(--ease)}
-  header.scr{background:rgba(244,241,234,.78);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+  header.scr{background:rgba(10,12,17,.72);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
   nav{display:flex;align-items:center;justify-content:space-between;height:92px}
   .brand{font-family:'Fraunces';font-weight:400;font-size:19px}
   .navlinks{display:flex;gap:46px;align-items:center}
@@ -39,55 +40,54 @@
   .navtoggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer}
 
   /* hero */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:160px 0 120px}
-  .hero-in{max-width:1000px}
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:160px 0 120px;overflow:hidden}
+  .hero .aura{position:absolute;z-index:0;pointer-events:none;border-radius:50%;filter:blur(40px)}
+  .hero .aura.b{width:760px;height:560px;top:-10%;right:-12%;background:radial-gradient(circle,rgba(92,157,255,.12),transparent 62%)}
+  .hero .aura.g{width:560px;height:460px;bottom:-16%;left:-12%;background:radial-gradient(circle,rgba(201,168,105,.10),transparent 64%)}
+  .hero-in{position:relative;z-index:1;max-width:1000px}
   .hero .kicker{display:block;margin-bottom:46px}
-  .hero h1{font-size:clamp(50px,8.6vw,128px);margin-bottom:52px}
-  .hero h1 em{color:var(--accent);font-weight:400}
+  .hero h1{font-size:clamp(50px,8.6vw,126px);margin-bottom:52px}
+  .hero h1 em{font-weight:400}
   .hero .sub{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:500px;line-height:1.55;margin-bottom:62px}
   .row{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
-  .lnk{position:relative;font-size:13.5px;font-weight:500;letter-spacing:.05em;padding-bottom:9px}
+  .lnk{position:relative;font-size:13.5px;font-weight:500;letter-spacing:.05em;padding-bottom:9px;color:var(--ink)}
   .lnk:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line-s);transition:background .35s}
-  .lnk:hover:after,.lnk.g:after{background:var(--accent)}
-  .meta{position:absolute;bottom:48px;left:0;right:0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+  .lnk.g:after{background:var(--gold)} .lnk:hover:after{background:var(--blue)}
+  .meta{position:absolute;bottom:48px;left:0;right:0;z-index:1;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
   .meta .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
-  .sec{padding:clamp(120px,18vh,210px) 0;border-top:1px solid var(--line)}
-  .lbl{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:64px;display:flex;gap:14px}
+  .sec{padding:clamp(120px,18vh,205px) 0;border-top:1px solid var(--line)}
+  .lbl{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:64px;display:flex;gap:14px}
   .lbl .n{color:var(--faint)}
 
   /* about */
-  .lead{font-size:clamp(28px,3.9vw,52px);line-height:1.24;font-weight:300;letter-spacing:-.02em;max-width:940px}
-  .lead em{color:var(--accent)}
-  .about-sub{max-width:var(--read);margin:52px 0 0 auto;color:var(--muted);font-size:17px}
+  .lead{font-size:clamp(28px,3.9vw,50px);line-height:1.24;font-weight:300;letter-spacing:-.02em;max-width:940px}
+  .lead em{color:var(--gold)}
+  .about-sub{max-width:var(--read);margin:52px 0 0 auto;color:var(--muted);font-size:16.5px}
+  .about-sub strong{color:var(--ink-2);font-weight:500}
   .facts{display:flex;gap:64px;flex-wrap:wrap;margin-top:80px;padding-top:44px;border-top:1px solid var(--line)}
-  .fact .n{font-family:'Fraunces';font-size:clamp(44px,5vw,68px);font-weight:300;letter-spacing:-.025em;line-height:1}
-  .fact .n .u{color:var(--accent)}
-  .fact .c{font-size:12.5px;color:var(--muted);margin-top:14px;max-width:180px;letter-spacing:.02em;line-height:1.5}
+  .fact .n{font-family:'Fraunces';font-size:clamp(44px,5vw,66px);font-weight:300;letter-spacing:-.025em;line-height:1}
+  .fact:nth-child(1) .n .u{color:var(--gold)} .fact:nth-child(2) .n .u{color:var(--blue)} .fact:nth-child(3) .n .u{color:var(--gold)}
+  .fact .c{font-size:12.5px;color:var(--muted);margin-top:14px;max-width:170px;letter-spacing:.02em;line-height:1.5}
 
-  /* expertise + work shared list */
+  /* list (work + expertise) */
   .list .li{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:baseline;padding:38px 0;border-top:1px solid var(--line);transition:.55s var(--ease)}
   .list .li:last-child{border-bottom:1px solid var(--line)}
   .list .li:hover{padding-left:16px}
-  .list .li h3{font-family:'Fraunces';font-size:clamp(28px,4.4vw,52px);font-weight:300;letter-spacing:-.025em;transition:color .4s}
-  .list .li:hover h3{color:var(--accent)}
-  .list .li .side{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);white-space:nowrap;padding-top:14px;text-align:right}
-
-  /* experience — condensed */
-  .exp{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:960px}
-  .exp .eh{font-family:'Fraunces';font-size:clamp(22px,2.4vw,30px);font-weight:300;letter-spacing:-.015em;margin-bottom:10px}
-  .exp .eo{font-size:14px;color:var(--accent);letter-spacing:.02em;margin-bottom:14px}
-  .exp p{color:var(--muted);font-size:15.5px}
-  .exp .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
-
+  .list .li h3{font-family:'Fraunces';font-size:clamp(28px,4.4vw,50px);font-weight:300;letter-spacing:-.025em;transition:color .4s}
+  .list .li:hover h3{color:var(--gold)}
+  .list .li .side{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);white-space:nowrap;padding-top:14px;text-align:right;transition:color .4s}
+  .list .li:hover .side{color:var(--blue)}
   .note{margin-top:52px;color:var(--muted);font-size:15px;max-width:var(--read)}
-  .note a{color:var(--ink);border-bottom:1px solid var(--accent);padding-bottom:1px}
+  .note a{color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:1px}
 
   /* contact */
-  .contact{padding:clamp(140px,22vh,240px) 0;text-align:center;border-top:1px solid var(--line)}
-  .contact h2{font-size:clamp(46px,8.2vw,116px);margin:24px 0 40px}
-  .contact h2 em{color:var(--accent);font-weight:400}
-  .contact .cta-row{display:inline-flex;gap:44px;flex-wrap:wrap;justify-content:center}
+  .contact{padding:clamp(140px,22vh,240px) 0;text-align:center;border-top:1px solid var(--line);position:relative;overflow:hidden}
+  .contact .aura{position:absolute;width:1000px;height:520px;left:50%;top:6%;transform:translateX(-50%);border-radius:50%;pointer-events:none;filter:blur(50px);
+    background:radial-gradient(circle,rgba(92,157,255,.10),transparent 64%)}
+  .contact h2{position:relative;font-size:clamp(46px,8.2vw,114px);margin:24px 0 42px}
+  .contact h2 em{font-weight:400}
+  .contact .cta-row{position:relative;display:inline-flex;gap:44px;flex-wrap:wrap;justify-content:center}
 
   footer{border-top:1px solid var(--line);padding:46px 0}
   .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--faint);font-size:12px;letter-spacing:.05em}
@@ -100,9 +100,7 @@
   @media(max-width:820px){
     .navlinks{display:none}.navtoggle{display:block}
     .navlinks.open{display:flex;position:absolute;top:92px;left:0;right:0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--line);padding:26px 44px;gap:24px}
-    .exp{grid-template-columns:1fr;gap:44px}
-    .about-sub{margin-left:0}
-    .facts{gap:40px}
+    .about-sub{margin-left:0}.facts{gap:40px}
   }
   @media(max-width:520px){.wrap{padding:0 28px}.list .li{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
@@ -116,7 +114,7 @@
     <div class="navlinks" id="nav">
       <a href="#about">About</a>
       <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
       <a href="#contact">Contact</a>
     </div>
     <button class="navtoggle" id="toggle" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></svg></button>
@@ -125,9 +123,10 @@
 
 <main id="top">
   <section class="hero">
+    <div class="aura b"></div><div class="aura g"></div>
     <div class="wrap hero-in">
       <span class="kicker">Entertainment Technology Leadership</span>
-      <h1 class="serif">Experiences the world<br><em>remembers.</em></h1>
+      <h1 class="serif">Experiences the world<br><em class="bg">remembers.</em></h1>
       <p class="sub">Seventeen years directing the systems behind the most ambitious destinations on earth.</p>
       <div class="row">
         <a class="lnk g" href="#contact">Start a conversation</a>
@@ -142,7 +141,7 @@
     <div class="wrap">
       <div class="lbl rv"><span class="n">01</span> About</div>
       <p class="lead serif rv">For seventeen years I've worked where entertainment technology performs <em>flawlessly</em> — or fails in front of thousands. That is where I lead.</p>
-      <p class="about-sub rv">Today, with JASARA Program Management in Riyadh, I direct integrated show systems, AV and lighting across some of the most ambitious entertainment destinations being built anywhere in the world.</p>
+      <p class="about-sub rv">Today I direct integrated show systems, AV and lighting with <strong>JASARA Program Management</strong> in Riyadh — a path that ran through the UAE, Europe, and live show operations at sea.</p>
       <div class="facts rv">
         <div class="fact"><div class="n">17<span class="u">+</span></div><div class="c">years in entertainment technology</div></div>
         <div class="fact"><div class="n">Giga<span class="u">.</span></div><div class="c">scale destination delivery</div></div>
@@ -161,7 +160,7 @@
         <div class="li rv"><h3>Performing Arts Centre</h3><span class="side">Cultural Venue</span></div>
         <div class="li rv"><h3>Speed Park</h3><span class="side">Motorsport &amp; Live</span></div>
       </div>
-      <p class="note rv">On the program teams behind Saudi Arabia's flagship destination for sport, culture and entertainment. Much of the work is under NDA — <a href="#contact">I'm glad to discuss it directly</a>.</p>
+      <p class="note rv">Program teams behind Saudi Arabia's flagship destination for sport, culture and entertainment. Much is under NDA — <a href="#contact">glad to discuss directly</a>.</p>
     </div>
   </section>
 
@@ -178,32 +177,12 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="sec" id="experience">
-    <div class="wrap">
-      <div class="lbl rv"><span class="n">04</span> Experience</div>
-      <div class="exp">
-        <div class="rv">
-          <div class="k">Current</div>
-          <div class="eh">Entertainment Technology &amp; Program Delivery</div>
-          <div class="eo">JASARA Program Management Company · Riyadh</div>
-          <p>Directing integrated show systems, AV and lighting across landmark entertainment destinations at giga-project scale.</p>
-        </div>
-        <div class="rv">
-          <div class="k">Previously</div>
-          <div class="eh">A career across three continents — and at sea</div>
-          <div class="eo">UAE · Europe · Live show operations</div>
-          <p>Technical and show-systems leadership across the UAE and Europe, built on the no-second-take discipline of live cruise operations aboard MV Hamburg &amp; MV Deutschland.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section class="contact" id="contact">
+    <div class="aura"></div>
     <div class="wrap rv">
       <span class="kicker">Contact</span>
-      <h2 class="serif">Let's build something<br><em>unforgettable.</em></h2>
+      <h2 class="serif">Let's build something<br><em class="bg">unforgettable.</em></h2>
       <div class="cta-row">
         <a class="lnk g" href="mailto:info@ferencdobos.com">info@ferencdobos.com</a>
         <a class="lnk" href="https://www.linkedin.com/in/ferencdobos" target="_blank" rel="noopener">LinkedIn</a>
